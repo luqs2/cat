@@ -27,9 +27,9 @@ export const fetchCatsByBreed = async (breed: string): Promise<Cat[]> => {
 
 
 
-export const fetchCatsListByBreed = async (): Promise<Cat[]> => {
+export const fetchCatsListByBreed = async (offset: number = 0): Promise<Cat[]> => {
   try {
-    const response: ApiResponse<Cat[]> = await api.get('/cats?min_weight=1')
+    const response: ApiResponse<Cat[]> = await api.get(`/cats?min_weight=1&offset=${offset}`)
     return response.data
   } catch (error) {
     if (axios.isAxiosError(error)) {

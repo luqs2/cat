@@ -63,7 +63,7 @@ onMounted(() => {
         </div>
 
         <div class="info-section">
-          <h2>Characteristics</h2>
+          <h2>😸 Characteristics</h2>
           <div class="ratings-grid">
             <div class="rating-item">
               <span>Family Friendly</span>
