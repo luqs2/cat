@@ -8,6 +8,10 @@ const api = axios.create({
   },
 })
 
+interface ApiResponse<T> {
+  data: T;
+}
+
 export const fetchCatsByBreed = async (breed: string): Promise<Cat[]> => {
   try {
     const response = await api.get(`/cats?name=${breed}`)
@@ -21,9 +25,7 @@ export const fetchCatsByBreed = async (breed: string): Promise<Cat[]> => {
 
 }
 
-interface ApiResponse<T> {
-  data: T;
-}
+
 
 export const fetchCatsListByBreed = async (): Promise<Cat[]> => {
   try {

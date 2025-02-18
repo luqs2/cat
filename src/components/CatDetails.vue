@@ -35,6 +35,8 @@ onMounted(() => {
     <div v-if="loading" class="loading">Loading cat details...</div>
     <div v-else-if="error" class="error">{{ error }}</div>
     <div v-else-if="cat" class="cat-details">
+
+
       <div class="title">
         <h1>{{ cat.name }}</h1>
       </div>
@@ -126,10 +128,13 @@ onMounted(() => {
 }
 
 .image img {
-  max-width: 70%;
+  width: 100%;
+  max-width: 400px;
+  max-height: 400px;
   height: auto;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 5%;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.251);
+  object-fit: cover;
 }
 
 .info-section {

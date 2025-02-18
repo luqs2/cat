@@ -27,6 +27,10 @@ const handleSearch = async () => {
   }
 }
 
+const viewCatDetails = (catName: string) => {
+  router.push(`/cats/${encodeURIComponent(catName)}`)
+}
+
 onMounted(() => {
   cats.value = []
 })
@@ -54,7 +58,7 @@ onMounted(() => {
     </div>
 
     <div v-else-if="cats.length > 0" class="cat-grid">
-      <div v-for="cat in cats" :key="cat.name" class="cat-card">
+      <div v-for="cat in cats" :key="cat.name" class="cat-card" @click="viewCatDetails(cat.name)">
         <div class="cat-card-content">
           <h3>{{ cat.name }}</h3>
           <div class="cat-info">
@@ -108,7 +112,6 @@ onMounted(() => {
   }
 }
 
-
 .search-container {
   display: flex;
   gap: 10px;
@@ -150,6 +153,15 @@ input {
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.cat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .cat-card-content h3 {
