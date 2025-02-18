@@ -126,7 +126,7 @@ onMounted(() => {
 }
 
 .image img {
-  max-width: 100%;
+  max-width: 70%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
@@ -165,6 +165,8 @@ onMounted(() => {
 
 .rating-item span {
   display: block;
+  font-weight: bold;
+  font-size: 18px;
   margin-bottom: 0.5rem;
   color: #666;
 }
